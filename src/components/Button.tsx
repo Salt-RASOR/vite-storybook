@@ -3,12 +3,14 @@ import {PacmanLoader} from 'react-spinners'
  
 
 
-const Button = () => {
-const isLoading = true
+const Button = ({isLoading=false, disabled: isDisabled=false}) => {
+
   return (
     <button
       type="button"
+      disabled={isDisabled}
       className={clsx("text-white bg-blue-700 font-medium rounded-lg text-sm", // button style
+      isDisabled ? "bg-gray-600 hover:bg-gray-600" : '',
       "flex ", 
       "px-5 py-2.5 me-2 mb-2", // layout
       "hover:bg-blue-800", // hover
